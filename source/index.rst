@@ -25,6 +25,7 @@ When using custom controls, the users are redirected to SafeNet Trusted Access t
       node_width=350;  
       node_height=200;
       default_fontsize = 35;
+      span_height = 60;
       
       
       A [label = "Azure\n Active Directory"];
