@@ -21,8 +21,9 @@ When using custom controls, the users are redirected to SafeNet Trusted Access t
 .. blockdiag::
 
     blockdiag admin {
-      Azure -> AAD User -> AAD Password -> STA -> Azure;
+      Azure -> User -> Password -> STA -> Azure;
     }
+
 
 
 
