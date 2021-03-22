@@ -66,3 +66,5 @@ html_theme_options = {
 'sticky_navigation': True
 }
 html_logo = '_static/thales_logo.png'
+
+blockdiag_fontpath = "/Library/Fonts/Arial Unicode.ttf"

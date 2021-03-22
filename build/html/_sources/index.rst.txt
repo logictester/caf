@@ -20,14 +20,20 @@ When using custom controls, the users are redirected to SafeNet Trusted Access t
 
 .. blockdiag::
 
-    blockdiag {
+    blockdiag azure {
       
-      default_fontsize = 20;
-      node_width = 200;  
-      node_height = 100;
+      node_width=350;  
+      node_height=200;
+      default_fontsize = 35;
       
-     "Azure Active Directory" -> "AAD Username" -> "AAD Password" -> "STA Authentication" -> "Azure Active Directory"
-     
+      
+      A [label = "Azure\n Active Directory"];
+      B [label = "AAD Username"];
+      C [label = "AAD Password"];
+      D [label = "STA Authentication"];
+      
+      A -> B -> C -> D -> A;
+      
     }
 
 
