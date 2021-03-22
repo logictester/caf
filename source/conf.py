@@ -67,4 +67,4 @@ html_theme_options = {
 }
 html_logo = '_static/thales_logo.png'
 
-blockdiag_fontpath = '/usr/share/fonts/dejavu/DejaVuSerif.ttf'
+blockdiag_fontpath = '_static/arial.ttf'
