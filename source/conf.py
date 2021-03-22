@@ -35,7 +35,6 @@ release = '0.0.1'
 
 extensions = [
  
-    'sphinxcontrib.images',
     'sphinx_copybutton',
     'sphinx_rtd_theme',
     'sphinx_tabs.tabs',
