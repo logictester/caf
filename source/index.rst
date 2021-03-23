@@ -70,11 +70,26 @@ The configuration requires the following steps:
 SafeNet Trusted Access configuration
 ====================================
 
-Open |location_link|.
+Open SafeNet Trusted Access Console (you can use the following links based on your availability zone, opens in a new tab)
 
-.. |location_link| raw:: html
+|US Zone|
 
-   <a href="https://sta.us.safenetid.com" target="_blank">SafeNet Trusted Access Console</a>
+.. |US Zone| raw:: html
+
+   <a href="https://sta.us.safenetid.com" target="_blank">US Zone SafeNet Trusted Access Console</a>
+
+|EU Zone|
+
+.. |EU Zone| raw:: html
+
+   <a href="https://sta.eu.safenetid.com" target="_blank">EU Zone SafeNet Trusted Access Console</a>
+
+|Classic Zone|
+
+.. |Classic Zone| raw:: html
+
+   <a href="https://sta.safenetid.com" target="_blank">Classic Zone SafeNet Trusted Access Console</a>
+
 
 Create new Azure Conditional Authentication Factors Application
 ***************************************************************
