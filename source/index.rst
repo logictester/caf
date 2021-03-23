@@ -82,4 +82,5 @@ In the STA Console create a new application by following these steps:
 
 The application is added:
 
-  ..thumbnail:: _/images/aad_add.png 
+.. thumbnail:: _images/aad_add.png 
+    :align: center
