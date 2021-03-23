@@ -152,10 +152,10 @@ The STA configuration is complete
 Azure Active Directory configuration
 ====================================
 
-Open Azure Active Directory console (you can use the following link, opens in a new tab)
+Open Azure Active Directory console, Security -> Custom Controls (you can use the following link, opens in a new tab)
 
 |Azure|
 
 .. |Azure| raw:: html
 
-   <a href="https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade" target="_blank">Azure Active Directory Console</a>
+   <a href="https://portal.azure.com/#blade/Microsoft_AAD_IAM/ConditionalAccessBlade/CustomControls" target="_blank">Azure Active Directory Console Custom Controls</a>
