@@ -151,3 +151,11 @@ The STA configuration is complete
 
 Azure Active Directory configuration
 ====================================
+
+Open Azure Active Directory console (you can use the following link, opens in a new tab)
+
+|Azure|
+
+.. |Azure| raw:: html
+
+   <a href="https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade" target="_blank">Azure Active Directory Console</a>
