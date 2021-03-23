@@ -3,11 +3,13 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+===============================================================
 Azure Custom Authentication Factors with SafeNet Trusted Access
 ===============================================================
 
 .. toctree::
    :maxdepth: 3
+   :hidden:
    :caption: Contents:
 
    index
@@ -42,5 +44,19 @@ When using custom controls, the users are redirected to SafeNet Trusted Access t
 Configuration Steps
 ===================
 
-The configuration 
+The configuration requires the following steps:
+
+  **In STA**
+  
+  - Add **Azure Custom Authentication Factor** application in STA
+  - Copy the generated **JSON** code
+  - Assign the application to users
+  - Configure STA Authentication Policy
+  
+  **In Azure**
+  
+  - Create **Custom Control** using the provided **JSON** code
+  - Create **Conditional Access** policy to use the new **Custom Control**
+  
+  
 
