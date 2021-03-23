@@ -56,7 +56,7 @@ The configuration requires the following steps:
 
   **In STA**
 
-  - Add **Azure Conditional Authentication Factor** application in STA
+  - Add **Azure Conditional Authentication Factors** application in STA
   - Copy the generated `JSON`_ code
   - Assign the application to users
   - `Configure STA Authentication Policy`_
@@ -67,8 +67,8 @@ The configuration requires the following steps:
   - Create **Conditional Access** policy to use the new **Custom Control**
 
 
-SafeNet Trusted Access
-======================
+SafeNet Trusted Access configuration
+====================================
 
 
 Create new Azure Conditional Authentication Factors Application
@@ -123,6 +123,11 @@ In the STA Console, create a new Access Policy for Azure Conditional Authenticat
 
   - Click :guilabel:`Save` to save the new Policy
 
-.. thumbnail:: _images/policy.png 
+.. thumbnail:: _images/policy.png
 
 The STA configuration is complete
+
+
+
+Azure Active Directory configuration
+====================================
