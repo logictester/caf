@@ -83,7 +83,7 @@ In the STA Console create a new application by following these steps:
 
   - Click :guilabel:`Add` to add the application to your library
 
-The application is added and **JSON** code is generated:
+The application is added and **JSON** code is generated: :ref:`JSON <JSON>`
 
 .. thumbnail:: _images/aad_add.png
     :align: center
