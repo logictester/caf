@@ -76,7 +76,7 @@ Create new Azure Conditional Authentication Factors Application
 In the STA Console create a new application by following these steps:
 
 	- Go to the **Applications** tab by clicking  |t|
-                                                   .. |t| image:: /images/Picture2.png
+                                                   .. |t| image:: _images/Picture2.png
  	- Click  |+| and search for **Azure Conditional Authentication Factors**
-              .. |+| image:: /images/Picture3.png
+              .. |+| image:: _images/Picture3.png
 
