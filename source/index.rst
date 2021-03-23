@@ -70,6 +70,11 @@ The configuration requires the following steps:
 SafeNet Trusted Access configuration
 ====================================
 
+Open |location_link|.
+
+.. |location_link| raw:: html
+
+   <a href="https://sta.us.safenetid.com" target="_blank">SafeNet Trusted Access Console</a>
 
 Create new Azure Conditional Authentication Factors Application
 ***************************************************************
@@ -78,7 +83,7 @@ In the STA Console create a new application by following these steps:
 
   - Go to the :guilabel:`Applications` tab
 
-  - Click :guilabel:`+` and search for **Azure Conditional Authentication Factors**
+  - Click :guilabel:`+` and search for **Azure Conditional Authentication Factors**, click it to select
 
   - *(Optional)* Rename the Application to a desired application name
 
