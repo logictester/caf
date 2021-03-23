@@ -54,15 +54,17 @@ Configuration Steps
 
 The configuration requires the following steps:
 
-  **In :abbr:`STA (SafeNet Trusted Access)`**
+  In :abbr:`STA (Safenet Trusted Access)`
+  ***************************************
 
   - Add **Azure Conditional Authentication Factors** application in STA
   - Copy the generated :ref:`JSON <JSON>` code
   - Assign the application to users
   - `Configure STA Authentication Policy`_
 
-  **In Azure**
-
+  In Azure
+  ********
+  
   - Create **Custom Control** using the provided **JSON** code
   - Create **Conditional Access** policy to use the new **Custom Control**
 
