@@ -7,7 +7,7 @@ Azure Custom Authentication Factors with SafeNet Trusted Access
 ===============================================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Contents:
 
 
