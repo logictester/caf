@@ -43,6 +43,12 @@ When using custom controls, the users are redirected to SafeNet Trusted Access t
 .. note:: For more information about Micrsoft Custom Authentication Factors (Custom Controls), please visit https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/controls
 
 
+Prerequisites
+=============
+
+  - Existing Azure Active Directory with **P1** license
+  - Test User synchronized to both AAD and STA *(matching UPN)*
+
 Configuration Steps
 ===================
 
