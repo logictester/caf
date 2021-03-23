@@ -23,20 +23,20 @@ When using custom controls, the users are redirected to SafeNet Trusted Access t
 .. blockdiag::
 
     blockdiag azure {
-      
-      node_width=350;  
+
+      node_width=350;
       node_height=200;
       default_fontsize = 35;
       span_height = 60;
-      
-      
+
+
       A [label = "Azure\n Active Directory"];
       B [label = "AAD Username"];
       C [label = "AAD Password"];
       D [label = "STA Authentication"];
-      
+
       A -> B -> C -> D -> A;
-      
+
     }
 
 
@@ -55,28 +55,26 @@ Configuration Steps
 The configuration requires the following steps:
 
   **In STA**
-  
+
   - Add **Azure Conditional Authentication Factor** application in STA
   - Copy the generated **JSON** code
   - Assign the application to users
   - Configure STA Authentication Policy
-  
+
   **In Azure**
-  
+
   - Create **Custom Control** using the provided **JSON** code
   - Create **Conditional Access** policy to use the new **Custom Control**
-  
+
 
 SafeNet Trusted Access
 ======================
 
-Create new Azure Conditional Authentication Factors Application 
+Create new Azure Conditional Authentication Factors Application
 ***************************************************************
 
 In the STA Console create a new application by following these steps:
 
-	- Go to the **Applications** tab by clicking  |t|
-                                                   .. |t| image:: _images/Picture2.png
- 	- Click  |+| and search for **Azure Conditional Authentication Factors**
-              .. |+| image:: _images/Picture3.png
-
+	- Go to the :guilabel:`Applications` tab
+ 	- Click  :guilabel:`+` and search for **Azure Conditional Authentication Factors**
+              
