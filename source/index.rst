@@ -79,11 +79,11 @@ In the STA Console create a new application by following these steps:
 
   - Click :guilabel:`+` and search for **Azure Conditional Authentication Factors**
 
-  - Rename the Application to a desired application name
+  - *(Optional)* Rename the Application to a desired application name
 
   - Click :guilabel:`Add` to add the application to your library
 
-The application is added:
+The application is added and **JSON** code is generated:
 
 .. thumbnail:: _images/aad_add.png
     :align: center
