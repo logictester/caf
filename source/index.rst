@@ -54,7 +54,7 @@ Configuration Steps
 
 The configuration requires the following steps:
 
-  **In STA**
+  **In :abbr:`STA (SafeNet Trusted Access)`**
 
   - Add **Azure Conditional Authentication Factors** application in STA
   - Copy the generated :ref:`JSON <JSON>` code
