@@ -57,7 +57,7 @@ The configuration requires the following steps:
   **In STA**
 
   - Add **Azure Conditional Authentication Factor** application in STA
-  - Copy the generated **JSON** code
+  - Copy the generated :ref:`**JSON** <target>` code
   - Assign the application to users
   - Configure STA Authentication Policy
 
