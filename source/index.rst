@@ -109,10 +109,18 @@ In the STA Console, create a new Access Policy for Azure Conditional Authenticat
 
   - Click :guilabel:`+` to add a new Policy
 
-  - Name the new Policy *example Azure Custom Control*
+  - Name the new Policy, *for example Azure Custom Control*
 
-  - Under **Users**, click :guilabel:`All Users` to apply to all users or :guilabel:`Any of these User Groups:` to apply to specifc User Groups
+  - **Polcy Scope**
 
-  - Under **Applications**, click :guilabel:`Any of these Applications`, click in the field and select **Azure Conditional Authentication Factors** Application
+    - Under **Users**, click :guilabel:`All Users` to apply to all users or :guilabel:`Any of these User Groups:` to apply to specifc User Groups
 
-  
+    - Under **Applications**, click :guilabel:`Any of these Applications`, click in the field and select **Azure Conditional Authentication Factors** application
+
+  - **Default Requirements**
+
+    - Select the desired authentication method *for example* :guilabel:`Token Based Authentication (OTP)` and :guilabel:`Every access attempt`
+
+  - Click :guilabel:`Save` to save the new Policy
+
+The STA configuration is complete
