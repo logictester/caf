@@ -152,7 +152,7 @@ The STA configuration is complete
 Azure Active Directory configuration
 ====================================
 
-Open Azure Active Directory console, Security -> Custom Controls (you can use the following link, opens in a new tab)
+Open Azure Active Directory console, Security --> Custom Controls (you can use the following direct link, opens in a new tab)
 
 |Azure|
 
