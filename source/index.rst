@@ -106,7 +106,7 @@ In the STA Console create a new application by following these steps:
 
 .. target:
 
-The application is added and _`JSON` code is generated:
+The application is added and .. _JSON: code is generated:
 
 .. thumbnail:: _images/aad_add.png
     :align: center
