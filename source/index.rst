@@ -91,3 +91,9 @@ The application is added and **JSON** code is generated:
     :align: center
 
 Click :guilabel:`Copy` to copy the **JSON** code or :guilabel:`Email` to open a new email with **JSON** code pasted in and ready to send
+
+Click :guilabel:`Assign` to assign the created application to the required users
+
+.. thumbnail:: _images/assign.png
+
+Click :guilabel:`Save Configuration` to save the application
