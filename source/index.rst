@@ -123,4 +123,6 @@ In the STA Console, create a new Access Policy for Azure Conditional Authenticat
 
   - Click :guilabel:`Save` to save the new Policy
 
+.. thumbnail:: _images/policy.png 
+
 The STA configuration is complete
