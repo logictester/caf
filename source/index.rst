@@ -46,8 +46,8 @@ When using custom controls, the users are redirected to SafeNet Trusted Access t
 Prerequisites
 =============
 
-  - Existing Azure Active Directory domain with **P1 license** - *(**P1** or above is required for Conditional Access)*
-  - Test User synchronized to both AAD and STA - *(matching UPN)*
+  - Existing Azure Active Directory domain with **P1 license** - (**P1** or above is required for Conditional Access)
+  - Test User synchronized to both AAD and STA - (matching UPN)
 
 Configuration Steps
 ===================
