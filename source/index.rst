@@ -3,9 +3,9 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-===============================================================
-Azure Custom Authentication Factors with SafeNet Trusted Access
-===============================================================
+====================================================================
+Azure Conditional Authentication Factors with SafeNet Trusted Access
+====================================================================
 
 .. toctree::
    :maxdepth: 3
@@ -17,7 +17,7 @@ Azure Custom Authentication Factors with SafeNet Trusted Access
 Overview
 ========
 
-Azure Custom Authentication Factors (Custom Controls) allows extending the Azure Active Directory authentication with a third party authentication provider, using OIDC protocol.
+Azure Conditional Authentication Factors (Custom Controls) allows extending the Azure Active Directory authentication with a third party authentication provider, using OIDC protocol.
 When using custom controls, the users are redirected to SafeNet Trusted Access to satisfy authentication requirements outside of Azure Active Directory. To satisfy this control, a user's browser is redirected to SafeNet Trusted Access, performs any required authentication, and is then redirected back to Azure Active Directory. Azure Active Directory verifies the response and, if the user was successfully authenticated or validated, the user continues in the Conditional Access flow.
 
 .. blockdiag::
@@ -40,7 +40,7 @@ When using custom controls, the users are redirected to SafeNet Trusted Access t
     }
 
 
-.. note:: For more information about Microsoft Custom Authentication Factors (Custom Controls), please visit https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/controls
+.. note:: For more information about Microsoft Conditional Authentication Factors (Custom Controls), please visit https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/controls
 
 
 Prerequisites
@@ -56,7 +56,7 @@ The configuration requires the following steps:
 
   **In STA**
   
-  - Add **Azure Custom Authentication Factor** application in STA
+  - Add **Azure Conditional Authentication Factor** application in STA
   - Copy the generated **JSON** code
   - Assign the application to users
   - Configure STA Authentication Policy
@@ -66,5 +66,17 @@ The configuration requires the following steps:
   - Create **Custom Control** using the provided **JSON** code
   - Create **Conditional Access** policy to use the new **Custom Control**
   
-  
+
+SafeNet Trusted Access
+======================
+
+Create new Azure Conditional Authentication Factors Application 
+***************************************************************
+
+In the STA Console create a new application by following these steps:
+
+	- Go to the **Applications** tab by clicking  |t|
+                                                   .. |t| image:: _images/Picture2.png
+ 	- Click  |+| and search for **Azure Conditional Authentication Factors**
+              .. |+| image:: _images/Picture3.png
 
