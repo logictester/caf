@@ -10,6 +10,7 @@ Azure Custom Authentication Factors with SafeNet Trusted Access
    :maxdepth: 3
    :caption: Contents:
 
+   index
 
 Overview
 ========
