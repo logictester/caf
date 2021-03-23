@@ -87,3 +87,5 @@ The application is added and **JSON** code is generated:
 
 .. thumbnail:: _images/aad_add.png
     :align: center
+
+Click :guilabel:`Copy` to copy the **JSON** code or ::guilabel:`Email` to open a new email with **JSON** code pasted in and ready to send
