@@ -20,8 +20,6 @@ Overview
 Azure Custom Authentication Factors (Custom Controls) allows extending the Azure Active Directory authentication with a third party authentication provider, using OIDC protocol.
 When using custom controls, the users are redirected to SafeNet Trusted Access to satisfy authentication requirements outside of Azure Active Directory. To satisfy this control, a user's browser is redirected to SafeNet Trusted Access, performs any required authentication, and is then redirected back to Azure Active Directory. Azure Active Directory verifies the response and, if the user was successfully authenticated or validated, the user continues in the Conditional Access flow.
 
-.. note:: For more information about Micrsoft Custom Authentication Factors (Custom Controls), please visit https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/controls
-
 .. blockdiag::
 
     blockdiag azure {
@@ -40,6 +38,10 @@ When using custom controls, the users are redirected to SafeNet Trusted Access t
       A -> B -> C -> D -> A;
       
     }
+
+
+.. note:: For more information about Micrsoft Custom Authentication Factors (Custom Controls), please visit https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/controls
+
 
 Configuration Steps
 ===================
