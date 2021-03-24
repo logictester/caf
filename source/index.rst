@@ -70,25 +70,25 @@ The configuration requires the following steps:
 SafeNet Trusted Access configuration
 ====================================
 
-Open SafeNet Trusted Access Console (you can use the following links based on your availability zone, opens in a new tab)
+.. note:: Open SafeNet Trusted Access Console (you can use the following links based on your availability zone, opens in a new tab)
 
-|US Zone|
+          |US Zone|
 
-.. |US Zone| raw:: html
+           .. |US Zone| raw:: html
 
-   <a href="https://sta.us.safenetid.com" target="_blank">US Zone SafeNet Trusted Access Console</a>
+              <a href="https://sta.us.safenetid.com" target="_blank">US Zone SafeNet Trusted Access Console</a>
 
-|EU Zone|
+          |EU Zone|
 
-.. |EU Zone| raw:: html
+          .. |EU Zone| raw:: html
 
-   <a href="https://sta.eu.safenetid.com" target="_blank">EU Zone SafeNet Trusted Access Console</a>
+             <a href="https://sta.eu.safenetid.com" target="_blank">EU Zone SafeNet Trusted Access Console</a>
 
-|Classic Zone|
+          |Classic Zone|
 
-.. |Classic Zone| raw:: html
+          .. |Classic Zone| raw:: html
 
-   <a href="https://sta.safenetid.com" target="_blank">Classic Zone SafeNet Trusted Access Console</a>
+             <a href="https://sta.safenetid.com" target="_blank">Classic Zone SafeNet Trusted Access Console</a>
 
 
 Create new Azure Conditional Authentication Factors Application
@@ -152,9 +152,9 @@ The STA configuration is complete
 Azure Active Directory configuration
 ====================================
 
-Open Azure Active Directory console, :menuselection:`Security --> Custom Controls` (you can use the following direct link, opens in a new tab)
+.. note:: Open Azure Active Directory console, :menuselection:`Security --> Custom Controls` (you can use the following direct link, opens in a new tab)
 
-.. note:: |Azure|
+        |Azure|
 
           .. |Azure| raw:: html
 
