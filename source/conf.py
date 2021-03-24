@@ -34,7 +34,7 @@ release = '0.0.1'
 
 
 extensions = [
- 
+
     'sphinxcontrib.images',
     'sphinx_copybutton',
     'sphinx_rtd_theme',
@@ -66,5 +66,6 @@ html_theme_options = {
 'sticky_navigation': True
 }
 html_logo = '_static/thales_logo.png'
+html_favicon = 'cloud_icon.ico'
 
 blockdiag_fontpath = '_static/arial.ttf'
