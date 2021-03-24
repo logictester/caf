@@ -124,17 +124,17 @@ _`Configure STA Authentication Policy`
 
 In the STA Console, create a new Access Policy for Azure Conditional Authentication Factors application by following these steps:
 
-  - Go to the :guilabel:`Policies` tab
+  #. Go to the :guilabel:`Policies` tab
 
-  - Click :guilabel:`+` to add a new Policy
+  #. Click :guilabel:`+` to add a new Policy
 
-  - Name the new Policy, *for example Azure Custom Control*
+  #. Name the new Policy, *for example Azure Custom Control*
 
   - **Polcy Scope**
 
-    - Under **Users**, click :guilabel:`All Users` to apply to all users or :guilabel:`Any of these User Groups:` to apply to specifc User Groups
+    #. Under **Users**, click :guilabel:`All Users` to apply to all users or :guilabel:`Any of these User Groups:` to apply to specifc User Groups
 
-    - Under **Applications**, click :guilabel:`Any of these Applications`, click in the field and select **Azure Conditional Authentication Factors** application
+    #. Under **Applications**, click :guilabel:`Any of these Applications`, click in the field and select **Azure Conditional Authentication Factors** application
 
   - **Default Requirements**
 
