@@ -200,6 +200,7 @@ Create a new Policy to apply the new Custom Control
 
   .. thumbnail:: _images/aad_cc_users.png
 
+.. _apps:
 
 - Under **Cloud apps or actions**, click :guilabel:`No cloud apps or actions selected` to open the application selection blade
 
@@ -232,3 +233,27 @@ Create a new Policy to apply the new Custom Control
 .. thumbnail:: _images/aad_cc_create.png
 
 The new policy is created
+
+
+Testing the solution
+====================
+
+To test the integration, open a browser and navigate to the Azure application selected in :ref:`this section <apps>`, click :guilabel:`Sign in`
+
+.. thumbnail:: _images/aad_office.png
+
+You are redirected to Azure Active Directory sign in page, type in your Azure Active Directory username and click :guilabel:`Next`
+
+.. thumbnail:: _images/office_user.png
+
+Type in your Azure Active Directory password and click :guilabel:`Sign in`
+
+.. thumbnail:: _images/office_pass.png
+
+You are redirected to SafeNet Trusted Access authentication page, type in your OTP (using any OTP authenticators assigned to your user) and click :guilabel:`LOGIN`
+
+.. thumbnail:: _images/sta_login.png
+
+You are redirected back to your application and logged in
+
+.. thumbnail:: _images/office.png 
