@@ -256,3 +256,10 @@ You are redirected to SafeNet Trusted Access authentication page, type in your O
 You are redirected back to your application and logged in
 
 .. thumbnail:: _images/office.png
+
+
+Troubleshooting
+===============
+
+With Custom Controls implementation, the username matching between Azure Active Directory and SafeNet Trusted Access is based on **UPN**.
+Currently, the only way to get the user's UPN into SafeNet Trusted Access is through synchronization from Active Directory, using SafeNet Trusted Access Synchronization Agent. In case the user identifictaion fails after redirect to SafeNet Trusted Access, verify the **UPN** matches between Azure Active Dirctory and synchronized user in SafeNet Trusted Access.
