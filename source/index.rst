@@ -160,9 +160,9 @@ Azure Active Directory configuration
 
              <a href="https://portal.azure.com/#blade/Microsoft_AAD_IAM/ConditionalAccessBlade/CustomControls" target="_blank">Azure Active Directory Console - Custom Controls</a>
 
-.. thumbnail:: _images/aad_cc.png
 
-.. _control::
+
+.. _custom_control::
 
 Create a new Custom Control using these steps:
 **********************************************
@@ -171,6 +171,8 @@ Create a new Custom Control using these steps:
   - Delete the example JSON code provided from the text box
   - Paste the SafeNet Trusted Access :ref:`JSON <JSON>`, created in :ref:`this section <JSON>`, into the text box
   - Click :guilabel:`Create` to save the Configuration
+
+.. thumbnail:: _images/aad_cc.png
 
 The new Custom Control is created with a default name **SafeNet MFA**
 
@@ -210,7 +212,7 @@ Create a new Policy to apply the new Custom Control using these steps:
 
     - Under **Grant**, click :guilabel:`0 controls selected` to open the grant selection ConditionalAccessBlade
 
-    - Make sure **Grant access** is selected and click :guilabel:`SafeNet MFA` to select the Custom Control created in :ref:`this section <control>`, click :guilabel:`Select`
+    - Make sure **Grant access** is selected and click :guilabel:`SafeNet MFA` to select the Custom Control created in :ref:`this section <custom_control>`, click :guilabel:`Select`
 
 .. thumbnail:: _images/aad_cc_grant.png
 
@@ -220,4 +222,6 @@ Create a new Policy to apply the new Custom Control using these steps:
 
     - Click :guilabel:`Create` to save and create your policy
 
-.. thumbnail:: _images/aad_cc_create.png 
+.. thumbnail:: _images/aad_cc_create.png
+
+The new policy is created
