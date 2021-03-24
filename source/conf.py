@@ -66,6 +66,6 @@ html_theme_options = {
 'sticky_navigation': True
 }
 html_logo = '_static/thales_logo.png'
-html_favicon = 'cloud_icon.ico'
+html_favicon = 'icon.ico'
 
 blockdiag_fontpath = '_static/arial.ttf'
