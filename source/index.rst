@@ -162,7 +162,8 @@ Azure Active Directory configuration
 
 
 
-.. _custom_control::
+
+.. _custom_control:
 
 Create a new Custom Control using these steps:
 **********************************************
