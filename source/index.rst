@@ -54,14 +54,14 @@ Configuration Steps
 
 The configuration requires the following steps:
 
-  :abbr:`STA (Safenet Trusted Access)`
+  **In SafeNet Trusted Access**
 
   - Add **Azure Conditional Authentication Factors** application in STA
   - Copy the generated :ref:`JSON <JSON>` code
   - Assign the application to users
   - `Configure STA Authentication Policy`_
 
-  :abbr:`AAD (Azure Active Directory)`
+  **In Azure Active Directory**
 
   - Create **Custom Control** using the provided **JSON** code
   - Create **Conditional Access** policy to use the new **Custom Control**
@@ -158,4 +158,4 @@ Open Azure Active Directory console, :menuselection:`Security --> Custom Control
 
 .. |Azure| raw:: html
 
-   <a href="https://portal.azure.com/#blade/Microsoft_AAD_IAM/ConditionalAccessBlade/CustomControls" target="_blank">Azure Active Directory Console Custom - Controls</a>
+   <a href="https://portal.azure.com/#blade/Microsoft_AAD_IAM/ConditionalAccessBlade/CustomControls" target="_blank">Azure Active Directory Console - Custom Controls</a>
