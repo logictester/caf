@@ -10,7 +10,6 @@ Azure Conditional Authentication Factors with SafeNet Trusted Access
 .. toctree::
    :maxdepth: 3
    :hidden:
-   :caption: Contents:
 
    index
 
@@ -256,4 +255,4 @@ You are redirected to SafeNet Trusted Access authentication page, type in your O
 
 You are redirected back to your application and logged in
 
-.. thumbnail:: _images/office.png 
+.. thumbnail:: _images/office.png
