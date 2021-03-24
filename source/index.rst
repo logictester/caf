@@ -195,21 +195,24 @@ Create a new Policy to apply the new Custom Control using these steps:
 
     - Click :guilabel:`All users` to apply the policy to all users, or :guilabel:`Select users and groups` to apply the policy to specific users and groups
 
-.. thumbnail:: _images/aad_cc_users.png
+  .. thumbnail:: _images/aad_cc_users.png
 
-    - Under **Cloud apps or actions**, click :guilabel:`No cloud apps or actions selected` to open the application selection blade
+
+- Under **Cloud apps or actions**, click :guilabel:`No cloud apps or actions selected` to open the application selection blade
 
     - Click :guilabel:`All apps`, to apply the policy to all applications, or :guilabel:`Select apps` to apply the policy to specific applications
 
 .. thumbnail:: _images/aad_cc_apps.png
 
-    - Under **Conditions**, click :guilabel:`0 conditions selected` to open the conditions blade
+
+- Under **Conditions**, click :guilabel:`0 conditions selected` to open the conditions blade
 
     - Select the conditions that are required for your policy
 
 .. thumbnail:: _images/aad_cc_conditions.png
 
-  - **Access Controls**
+
+- **Access Controls**
 
     - Under **Grant**, click :guilabel:`0 controls selected` to open the grant selection ConditionalAccessBlade
 
@@ -217,7 +220,7 @@ Create a new Policy to apply the new Custom Control using these steps:
 
 .. thumbnail:: _images/aad_cc_grant.png
 
-  - **Enable Policy**
+- **Enable Policy**
 
     - To save the policy in **Report only mode**, click :guilabel:`Report-only`, to save and enable the policy, click :guilabel:`On`
 

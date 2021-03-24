@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Azure Custom Authentication Factors with SafeNet Trusted Access &mdash; SafeNet Trusted Access 0.0.1 documentation</title>
+  <title>Azure Conditional Authentication Factors with SafeNet Trusted Access &mdash; SafeNet Trusted Access 0.0.1 documentation</title>
   
 
   
@@ -93,12 +93,26 @@
               
             
             
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Azure Custom Authentication Factors with SafeNet Trusted Access</a></li>
-<li><a class="reference internal" href="#overview">Overview</a></li>
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Azure Conditional Authentication Factors with SafeNet Trusted Access</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-steps">Configuration Steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#safenet-trusted-access-configuration">SafeNet Trusted Access configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#create-new-azure-conditional-authentication-factors-application">Create new Azure Conditional Authentication Factors Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Configure STA Authentication Policy</a></li>
 </ul>
-</div>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#azure-active-directory-configuration">Azure Active Directory configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#create-a-new-custom-control-using-these-steps">Create a new Custom Control using these steps:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-a-new-policy-to-apply-the-new-custom-control-using-these-steps">Create a new Policy to apply the new Custom Control using these steps:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
             
           
         </div>
@@ -145,7 +159,7 @@
     
       <li><a href="#" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Azure Custom Authentication Factors with SafeNet Trusted Access</li>
+      <li>Azure Conditional Authentication Factors with SafeNet Trusted Access</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -164,15 +178,275 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="azure-custom-authentication-factors-with-safenet-trusted-access">
-<h1>Azure Custom Authentication Factors with SafeNet Trusted Access<a class="headerlink" href="#azure-custom-authentication-factors-with-safenet-trusted-access" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="azure-conditional-authentication-factors-with-safenet-trusted-access">
+<h1>Azure Conditional Authentication Factors with SafeNet Trusted Access<a class="headerlink" href="#azure-conditional-authentication-factors-with-safenet-trusted-access" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 </div>
-</div>
 <div class="section" id="overview">
-<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
-<p>Azure Custom Authentication Factors (Custom Controls) allows extending the Azure Active Directory authentication with a third party authentication provider, using OIDC protocol.
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Azure Conditional Authentication Factors (Custom Controls) allows extending the Azure Active Directory authentication with a third party authentication provider, using OIDC protocol.
 When using custom controls, the users are redirected to SafeNet Trusted Access to satisfy authentication requirements outside of Azure Active Directory. To satisfy this control, a user’s browser is redirected to SafeNet Trusted Access, performs any required authentication, and is then redirected back to Azure Active Directory. Azure Active Directory verifies the response and, if the user was successfully authenticated or validated, the user continues in the Conditional Access flow.</p>
+<div><img height="320" src="_images/blockdiag-b1c711de770de81bc462ec6c8cbe80873f67b266.png" width="1720" /></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For more information about Microsoft Conditional Authentication Factors (Custom Controls), please visit <a class="reference external" href="https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/controls">https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/controls</a></p>
+</div>
+</div>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>Existing Azure Active Directory domain with <strong>Premium P1 subscription</strong> - (<strong>P1</strong> or above is required for Conditional Access)</p></li>
+<li><p>Test User synchronized to both AAD and STA - (matching UPN)</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="configuration-steps">
+<h2>Configuration Steps<a class="headerlink" href="#configuration-steps" title="Permalink to this headline">¶</a></h2>
+<p>The configuration requires the following steps:</p>
+<blockquote>
+<div><p><strong>In SafeNet Trusted Access</strong></p>
+<ul class="simple">
+<li><p>Add <strong>Azure Conditional Authentication Factors</strong> application in STA</p></li>
+<li><p>Copy the generated <a class="reference internal" href="#json"><span class="std std-ref">JSON</span></a> code</p></li>
+<li><p>Assign the application to users</p></li>
+<li><p><a class="reference internal" href="#configure-sta-authentication-policy">Configure STA Authentication Policy</a></p></li>
+</ul>
+<p><strong>In Azure Active Directory</strong></p>
+<ul class="simple">
+<li><p>Create <strong>Custom Control</strong> using the provided <strong>JSON</strong> code</p></li>
+<li><p>Create <strong>Conditional Access</strong> policy to use the new <strong>Custom Control</strong></p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="safenet-trusted-access-configuration">
+<h2>SafeNet Trusted Access configuration<a class="headerlink" href="#safenet-trusted-access-configuration" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Open SafeNet Trusted Access Console (you can use the following direct links based on your availability zone, opens in a new tab)</p>
+<p><a href="https://sta.us.safenetid.com" target="_blank">US Zone SafeNet Trusted Access Console</a></p>
+<blockquote>
+<div></div></blockquote>
+<p><a href="https://sta.eu.safenetid.com" target="_blank">EU Zone SafeNet Trusted Access Console</a></p>
+<p><a href="https://sta.safenetid.com" target="_blank">Classic Zone SafeNet Trusted Access Console</a></p>
+</div>
+<div class="section" id="create-new-azure-conditional-authentication-factors-application">
+<h3>Create new Azure Conditional Authentication Factors Application<a class="headerlink" href="#create-new-azure-conditional-authentication-factors-application" title="Permalink to this headline">¶</a></h3>
+<p>In the STA Console create a new application by following these steps:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Go to the <span class="guilabel">Applications</span> tab</p></li>
+<li><p>Click <span class="guilabel">+</span> and search for <strong>Azure Conditional Authentication Factors</strong>, click it to select</p></li>
+<li><p><em>(Optional)</em> Rename the Application to a desired application name</p></li>
+<li><p>Click <span class="guilabel">Add</span> to add the application to your library</p></li>
+</ul>
+</div></blockquote>
+<p id="json">The application is added and <strong>JSON</strong> code is generated:</p>
+<a class=""
+               data-lightbox="group-3e36616a-aecc-438e-a45e-3c803e4618f4"
+               href="_images/aad_add.png"
+               title=""
+               data-title=""
+               ><img src="_images/aad_add.png"
+                     class="align-center"
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><p>Click <span class="guilabel">Copy</span> to copy the <strong>JSON</strong> code or <span class="guilabel">Email</span> to open a new email with <strong>JSON</strong> code pasted in and ready to send</p>
+<p>Click <span class="guilabel">Assign</span> to assign the created application to the required users</p>
+<a class=""
+               data-lightbox="group-c974d564-b513-4e69-892d-be5df756b0b4"
+               href="_images/assign.png"
+               title=""
+               data-title=""
+               ><img src="_images/assign.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><p>Click <span class="guilabel">Save Configuration</span> to save the application</p>
+</div>
+<div class="section" id="id1">
+<h3><span class="target" id="configure-sta-authentication-policy">Configure STA Authentication Policy</span><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>In the STA Console, create a new Access Policy for Azure Conditional Authentication Factors application by following these steps:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Go to the <span class="guilabel">Policies</span> tab</p></li>
+<li><p>Click <span class="guilabel">+</span> to add a new Policy</p></li>
+<li><p>Name the new Policy, <em>for example Azure Custom Control</em></p></li>
+<li><p><strong>Polcy Scope</strong></p>
+<ul>
+<li><p>Under <strong>Users</strong>, click <span class="guilabel">All Users</span> to apply to all users or <span class="guilabel">Any of these User Groups:</span> to apply to specifc User Groups</p></li>
+<li><p>Under <strong>Applications</strong>, click <span class="guilabel">Any of these Applications</span>, click in the field and select <strong>Azure Conditional Authentication Factors</strong> application</p></li>
+</ul>
+</li>
+<li><p><strong>Default Requirements</strong></p>
+<ul>
+<li><p>Select the desired authentication method <em>for example</em> <span class="guilabel">Token Based Authentication (OTP)</span> and <span class="guilabel">Every access attempt</span></p></li>
+</ul>
+</li>
+<li><p>Click <span class="guilabel">Save</span> to save the new Policy</p></li>
+</ul>
+</div></blockquote>
+<a class=""
+               data-lightbox="group-3b98bd43-529f-4c29-92fc-8413acc4ac91"
+               href="_images/policy.png"
+               title=""
+               data-title=""
+               ><img src="_images/policy.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><p>The STA configuration is complete</p>
+</div>
+</div>
+<div class="section" id="azure-active-directory-configuration">
+<h2>Azure Active Directory configuration<a class="headerlink" href="#azure-active-directory-configuration" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Open Azure Active Directory console, <span class="menuselection">Security ‣ Custom Controls</span> (you can use the following direct link, opens in a new tab)</p>
+<p><a href="https://portal.azure.com/#blade/Microsoft_AAD_IAM/ConditionalAccessBlade/CustomControls" target="_blank">Azure Active Directory Console - Custom Controls</a></p>
+<blockquote>
+<div></div></blockquote>
+</div>
+<div class="section" id="create-a-new-custom-control-using-these-steps">
+<span id="custom-control"></span><h3>Create a new Custom Control using these steps:<a class="headerlink" href="#create-a-new-custom-control-using-these-steps" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>Click <span class="guilabel">+ New custom control</span></p></li>
+<li><p>Delete the example JSON code provided from the text box</p></li>
+<li><p>Paste the SafeNet Trusted Access <a class="reference internal" href="#json"><span class="std std-ref">JSON</span></a>, created in <a class="reference internal" href="#json"><span class="std std-ref">this section</span></a>, into the text box</p></li>
+<li><p>Click <span class="guilabel">Create</span> to save the Configuration</p></li>
+</ul>
+</div></blockquote>
+<a class=""
+               data-lightbox="group-edeec531-62c8-4931-8f3c-cefee1a96393"
+               href="_images/aad_cc.png"
+               title=""
+               data-title=""
+               ><img src="_images/aad_cc.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><p>The new Custom Control is created with a default name <strong>SafeNet MFA</strong></p>
+<a class=""
+               data-lightbox="group-3fcf1e18-26e8-4695-9e14-dbce45a8eafb"
+               href="_images/aad_cc_added.png"
+               title=""
+               data-title=""
+               ><img src="_images/aad_cc_added.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+<div class="section" id="create-a-new-policy-to-apply-the-new-custom-control-using-these-steps">
+<h3>Create a new Policy to apply the new Custom Control using these steps:<a class="headerlink" href="#create-a-new-policy-to-apply-the-new-custom-control-using-these-steps" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>Click <span class="guilabel">Policies</span></p></li>
+<li><p>Click <span class="guilabel">+ New Policy</span></p></li>
+<li><p>Name the new policy, <em>for example Custom MFA for Cloud Applications</em></p></li>
+<li><p><strong>Assignments</strong></p>
+<ul>
+<li><p>Under <strong>Users and Groups</strong>, click <span class="guilabel">0 users and groups selected</span> to open the user selection blade</p></li>
+<li><p>Click <span class="guilabel">All users</span> to apply the policy to all users, or <span class="guilabel">Select users and groups</span> to apply the policy to specific users and groups</p></li>
+</ul>
+</li>
+</ul>
+<a class=""
+               data-lightbox="group-e512b19c-322e-4bed-b9b8-27a20f7a9ebe"
+               href="_images/aad_cc_users.png"
+               title=""
+               data-title=""
+               ><img src="_images/aad_cc_users.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div></blockquote>
+<ul>
+<li><p>Under <strong>Cloud apps or actions</strong>, click <span class="guilabel">No cloud apps or actions selected</span> to open the application selection blade</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Click <span class="guilabel">All apps</span>, to apply the policy to all applications, or <span class="guilabel">Select apps</span> to apply the policy to specific applications</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<a class=""
+               data-lightbox="group-fd70682f-3074-47f6-a043-7fcb8f7f19ff"
+               href="_images/aad_cc_apps.png"
+               title=""
+               data-title=""
+               ><img src="_images/aad_cc_apps.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><ul>
+<li><p>Under <strong>Conditions</strong>, click <span class="guilabel">0 conditions selected</span> to open the conditions blade</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Select the conditions that are required for your policy</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<a class=""
+               data-lightbox="group-dcb48a67-06c6-44a4-b30f-762ed5ec1545"
+               href="_images/aad_cc_conditions.png"
+               title=""
+               data-title=""
+               ><img src="_images/aad_cc_conditions.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><ul>
+<li><p><strong>Access Controls</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Under <strong>Grant</strong>, click <span class="guilabel">0 controls selected</span> to open the grant selection ConditionalAccessBlade</p></li>
+<li><p>Make sure <strong>Grant access</strong> is selected and click <span class="guilabel">SafeNet MFA</span> to select the Custom Control created in <a class="reference internal" href="#custom-control"><span class="std std-ref">this section</span></a>, click <span class="guilabel">Select</span></p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<a class=""
+               data-lightbox="group-2c7d47a3-2f6d-49b7-80bc-ceaadc199fe0"
+               href="_images/aad_cc_grant.png"
+               title=""
+               data-title=""
+               ><img src="_images/aad_cc_grant.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><ul>
+<li><p><strong>Enable Policy</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>To save the policy in <strong>Report only mode</strong>, click <span class="guilabel">Report-only</span>, to save and enable the policy, click <span class="guilabel">On</span></p></li>
+<li><p>Click <span class="guilabel">Create</span> to save and create your policy</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<a class=""
+               data-lightbox="group-5ab02806-1d60-4c2c-8a45-e472c04cf488"
+               href="_images/aad_cc_create.png"
+               title=""
+               data-title=""
+               ><img src="_images/aad_cc_create.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><p>The new policy is created</p>
+</div>
+</div>
 </div>
 
 
