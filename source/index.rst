@@ -159,3 +159,16 @@ Open Azure Active Directory console, :menuselection:`Security --> Custom Control
 .. |Azure| raw:: html
 
    <a href="https://portal.azure.com/#blade/Microsoft_AAD_IAM/ConditionalAccessBlade/CustomControls" target="_blank">Azure Active Directory Console - Custom Controls</a>
+
+.. thumbnail:: _images/aad_cc.png
+
+Create a new Custom Control using these steps:
+
+  - Click :guilabel:`+ New custom control`
+  - Delete the example JSON code provided from the text box
+  - Paste the SafeNet Trusted Access :ref:`JSON <JSON>` created in :ref:`this secrion <JSON>` into the text box
+  - Click :guilabel:`Create` to save the Configuration
+
+The new Custom Control is created with a default name **SafeNet MFA**
+
+.. thumbnail:: _images/aad_cc_added.png
