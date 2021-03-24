@@ -138,7 +138,7 @@ In the STA Console, create a new Access Policy for Azure Conditional Authenticat
 
   - **Default Requirements**
 
-    - Select the desired authentication method *for example* :guilabel:`Token Based Authentication (OTP)` and :guilabel:`Every access attempt`
+    #. Select the desired authentication method *for example* :guilabel:`Token Based Authentication (OTP)` and :guilabel:`Every access attempt`
 
   - Click :guilabel:`Save` to save the new Policy
 
@@ -167,10 +167,10 @@ Azure Active Directory configuration
 Create a new Custom Control
 ***************************
 
-  - Click :guilabel:`+ New custom control`
-  - Delete the example JSON code provided from the text box
-  - Paste the SafeNet Trusted Access :ref:`JSON <JSON>`, created in :ref:`this section <JSON>`, into the text box
-  - Click :guilabel:`Create` to save the Configuration
+  #. Click :guilabel:`+ New custom control`
+  #. Delete the example JSON code provided from the text box
+  #. Paste the SafeNet Trusted Access :ref:`JSON <JSON>`, created in :ref:`this section <JSON>`, into the text box
+  #. Click :guilabel:`Create` to save the Configuration
 
 .. thumbnail:: _images/aad_cc.png
 
@@ -185,17 +185,17 @@ The new Custom Control is created with a default name **SafeNet MFA**
 Create a new Policy to apply the new Custom Control
 ***************************************************
 
-  - Click :guilabel:`Policies`
+  #. Click :guilabel:`Policies`
 
-  - Click :guilabel:`+ New Policy`
+  #. Click :guilabel:`+ New Policy`
 
-  - Name the new policy, *for example Custom MFA for Cloud Applications*
+  #. Name the new policy, *for example Custom MFA for Cloud Applications*
 
   - **Assignments**
 
-    - Under **Users and Groups**, click :guilabel:`0 users and groups selected` to open the user selection blade
+    #. Under **Users and Groups**, click :guilabel:`0 users and groups selected` to open the user selection blade
 
-    - Click :guilabel:`All users` to apply the policy to all users, or :guilabel:`Select users and groups` to apply the policy to specific users and groups
+    #. Click :guilabel:`All users` to apply the policy to all users, or :guilabel:`Select users and groups` to apply the policy to specific users and groups
 
   .. thumbnail:: _images/aad_cc_users.png
 
@@ -203,31 +203,31 @@ Create a new Policy to apply the new Custom Control
 
 - Under **Cloud apps or actions**, click :guilabel:`No cloud apps or actions selected` to open the application selection blade
 
-    - Click :guilabel:`All apps`, to apply the policy to all applications, or :guilabel:`Select apps` to apply the policy to specific applications
+    #. Click :guilabel:`All apps`, to apply the policy to all applications, or :guilabel:`Select apps` to apply the policy to specific applications
 
 .. thumbnail:: _images/aad_cc_apps.png
 
 
 - Under **Conditions**, click :guilabel:`0 conditions selected` to open the conditions blade
 
-    - Select the conditions that are required for your policy
+    #. Select the conditions that are required for your policy
 
 .. thumbnail:: _images/aad_cc_conditions.png
 
 
 - **Access Controls**
 
-    - Under **Grant**, click :guilabel:`0 controls selected` to open the grant selection blade
+    #. Under **Grant**, click :guilabel:`0 controls selected` to open the grant selection blade
 
-    - Make sure **Grant access** is selected and click :guilabel:`SafeNet MFA` to select the Custom Control created in :ref:`this section <custom_control>`, click :guilabel:`Select`
+    #. Make sure **Grant access** is selected and click :guilabel:`SafeNet MFA` to select the Custom Control created in :ref:`this section <custom_control>`, click :guilabel:`Select`
 
 .. thumbnail:: _images/aad_cc_grant.png
 
 - **Enable Policy**
 
-    - To save the policy in **Report only mode**, click :guilabel:`Report-only`, to save and enable the policy, click :guilabel:`On`
+    #. To save the policy in **Report only mode**, click :guilabel:`Report-only`, to save and enable the policy, click :guilabel:`On`
 
-    - Click :guilabel:`Create` to save and create your policy
+    #. Click :guilabel:`Create` to save and create your policy
 
 .. thumbnail:: _images/aad_cc_create.png
 
