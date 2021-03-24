@@ -95,13 +95,13 @@ Create new Azure Conditional Authentication Factors Application
 
 In the STA Console create a new application by following these steps:
 
-  - Go to the :guilabel:`Applications` tab
+  #. Go to the :guilabel:`Applications` tab
 
-  - Click :guilabel:`+` and search for **Azure Conditional Authentication Factors**, click it to select
+  #. Click :guilabel:`+` and search for **Azure Conditional Authentication Factors**, click it to select
 
-  - *(Optional)* Rename the Application to a desired application name
+  #. *(Optional)* Rename the Application to a desired application name
 
-  - Click :guilabel:`Add` to add the application to your library
+  #. Click :guilabel:`Add` to add the application to your library
 
 .. _JSON:
 
