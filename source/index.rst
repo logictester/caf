@@ -70,7 +70,7 @@ The configuration requires the following steps:
 SafeNet Trusted Access configuration
 ====================================
 
-.. note:: Open SafeNet Trusted Access Console (you can use the following links based on your availability zone, opens in a new tab)
+.. note:: Open SafeNet Trusted Access Console (you can use the following direct links based on your availability zone, opens in a new tab)
 
           |US Zone|
 
@@ -162,7 +162,9 @@ Azure Active Directory configuration
 
 .. thumbnail:: _images/aad_cc.png
 
+
 Create a new Custom Control using these steps:
+**********************************************
 
   - Click :guilabel:`+ New custom control`
   - Delete the example JSON code provided from the text box
@@ -172,3 +174,16 @@ Create a new Custom Control using these steps:
 The new Custom Control is created with a default name **SafeNet MFA**
 
 .. thumbnail:: _images/aad_cc_added.png
+
+
+Create a new Policy to apply the new Custom Control using these steps:
+**********************************************************************
+
+  - Click :guilabel:`Policies`
+  - Click :guilabel:`+ New Policy`
+  - Name the new policy, *for example Custom MFA Policy for Cloud Applications*
+  - **Assignments**
+    - Under **Users and Groups**, click :guilabel:`0 users and groups selected` to open the user selection blade
+    - Click :guilabel:`All users` to apply the policy to all users, or :guilabel:`Select users and groups` to apply the policy to specific users and groups
+    .. thumbnail:: _images/aad_cc_users.png
+        :align: center
