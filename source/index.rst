@@ -180,14 +180,18 @@ Create a new Policy to apply the new Custom Control using these steps:
 **********************************************************************
 
   - Click :guilabel:`Policies`
+
   - Click :guilabel:`+ New Policy`
-  - Name the new policy, *for example Custom MFA Policy for Cloud Applications*
+
+  - Name the new policy, *for example Custom MFA for Cloud Applications*
+
   - **Assignments**
+
     - Under **Users and Groups**, click :guilabel:`0 users and groups selected` to open the user selection blade
+
     - Click :guilabel:`All users` to apply the policy to all users, or :guilabel:`Select users and groups` to apply the policy to specific users and groups
 
         .. thumbnail:: _images/aad_cc_users.png
             :align: center
 
     - Under **Cloud apps or actions**, click :guilabel:`No cloud apps or actions selected` to open the application selection blade
-    -
