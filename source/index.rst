@@ -258,6 +258,12 @@ You are redirected back to your application and logged in
 .. thumbnail:: _images/office.png
 
 
+Solution Overview Video
+=======================
+
+.. youtibe:: 5Tl06EuQrbU
+
+
 Troubleshooting
 ===============
 
