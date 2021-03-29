@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Azure Conditional Authentication Factors with SafeNet Trusted Access &mdash; SafeNet Trusted Access 0.0.1 documentation</title>
+  <title>Azure Conditional Authentication Factors with SafeNet Trusted Access &mdash; SafeNet Trusted Access 1.0.0 documentation</title>
   
 
   
@@ -18,6 +18,8 @@
   <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
 
   
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
   
 
   
@@ -93,8 +95,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul class="current">
+              <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Azure Conditional Authentication Factors with SafeNet Trusted Access</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
@@ -105,10 +106,13 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#azure-active-directory-configuration">Azure Active Directory configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#create-a-new-custom-control-using-these-steps">Create a new Custom Control using these steps:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#create-a-new-policy-to-apply-the-new-custom-control-using-these-steps">Create a new Policy to apply the new Custom Control using these steps:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-a-new-custom-control">Create a new Custom Control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-a-new-policy-to-apply-the-new-custom-control">Create a new Policy to apply the new Custom Control</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#testing-the-solution">Testing the solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#solution-overview-video">Solution Overview Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
 </ul>
 </li>
 </ul>
@@ -233,16 +237,16 @@ When using custom controls, the users are redirected to SafeNet Trusted Access t
 <h3>Create new Azure Conditional Authentication Factors Application<a class="headerlink" href="#create-new-azure-conditional-authentication-factors-application" title="Permalink to this headline">¶</a></h3>
 <p>In the STA Console create a new application by following these steps:</p>
 <blockquote>
-<div><ul class="simple">
+<div><ol class="arabic simple">
 <li><p>Go to the <span class="guilabel">Applications</span> tab</p></li>
 <li><p>Click <span class="guilabel">+</span> and search for <strong>Azure Conditional Authentication Factors</strong>, click it to select</p></li>
 <li><p><em>(Optional)</em> Rename the Application to a desired application name</p></li>
 <li><p>Click <span class="guilabel">Add</span> to add the application to your library</p></li>
-</ul>
+</ol>
 </div></blockquote>
 <p id="json">The application is added and <strong>JSON</strong> code is generated:</p>
 <a class=""
-               data-lightbox="group-3e36616a-aecc-438e-a45e-3c803e4618f4"
+               data-lightbox="group-d985dbfc-2544-4217-b2eb-f6223c3128a7"
                href="_images/aad_add.png"
                title=""
                data-title=""
@@ -254,7 +258,7 @@ When using custom controls, the users are redirected to SafeNet Trusted Access t
                 </a><p>Click <span class="guilabel">Copy</span> to copy the <strong>JSON</strong> code or <span class="guilabel">Email</span> to open a new email with <strong>JSON</strong> code pasted in and ready to send</p>
 <p>Click <span class="guilabel">Assign</span> to assign the created application to the required users</p>
 <a class=""
-               data-lightbox="group-c974d564-b513-4e69-892d-be5df756b0b4"
+               data-lightbox="group-037dd8d7-e081-4d8e-8c73-9259603c7a29"
                href="_images/assign.png"
                title=""
                data-title=""
@@ -269,26 +273,28 @@ When using custom controls, the users are redirected to SafeNet Trusted Access t
 <h3><span class="target" id="configure-sta-authentication-policy">Configure STA Authentication Policy</span><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>In the STA Console, create a new Access Policy for Azure Conditional Authentication Factors application by following these steps:</p>
 <blockquote>
-<div><ul class="simple">
+<div><ol class="arabic simple">
 <li><p>Go to the <span class="guilabel">Policies</span> tab</p></li>
 <li><p>Click <span class="guilabel">+</span> to add a new Policy</p></li>
 <li><p>Name the new Policy, <em>for example Azure Custom Control</em></p></li>
+</ol>
+<ul class="simple">
 <li><p><strong>Polcy Scope</strong></p>
-<ul>
+<ol class="arabic simple">
 <li><p>Under <strong>Users</strong>, click <span class="guilabel">All Users</span> to apply to all users or <span class="guilabel">Any of these User Groups:</span> to apply to specifc User Groups</p></li>
 <li><p>Under <strong>Applications</strong>, click <span class="guilabel">Any of these Applications</span>, click in the field and select <strong>Azure Conditional Authentication Factors</strong> application</p></li>
-</ul>
+</ol>
 </li>
 <li><p><strong>Default Requirements</strong></p>
-<ul>
+<ol class="arabic simple">
 <li><p>Select the desired authentication method <em>for example</em> <span class="guilabel">Token Based Authentication (OTP)</span> and <span class="guilabel">Every access attempt</span></p></li>
-</ul>
+</ol>
 </li>
 <li><p>Click <span class="guilabel">Save</span> to save the new Policy</p></li>
 </ul>
 </div></blockquote>
 <a class=""
-               data-lightbox="group-3b98bd43-529f-4c29-92fc-8413acc4ac91"
+               data-lightbox="group-13393958-4359-48a9-80a4-b123c5b060ee"
                href="_images/policy.png"
                title=""
                data-title=""
@@ -309,18 +315,18 @@ When using custom controls, the users are redirected to SafeNet Trusted Access t
 <blockquote>
 <div></div></blockquote>
 </div>
-<div class="section" id="create-a-new-custom-control-using-these-steps">
-<span id="custom-control"></span><h3>Create a new Custom Control using these steps:<a class="headerlink" href="#create-a-new-custom-control-using-these-steps" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="create-a-new-custom-control">
+<h3>Create a new Custom Control<a class="headerlink" href="#create-a-new-custom-control" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><ul class="simple">
+<div><ol class="arabic simple">
 <li><p>Click <span class="guilabel">+ New custom control</span></p></li>
 <li><p>Delete the example JSON code provided from the text box</p></li>
 <li><p>Paste the SafeNet Trusted Access <a class="reference internal" href="#json"><span class="std std-ref">JSON</span></a>, created in <a class="reference internal" href="#json"><span class="std std-ref">this section</span></a>, into the text box</p></li>
 <li><p>Click <span class="guilabel">Create</span> to save the Configuration</p></li>
-</ul>
+</ol>
 </div></blockquote>
 <a class=""
-               data-lightbox="group-edeec531-62c8-4931-8f3c-cefee1a96393"
+               data-lightbox="group-2e47da08-d914-42fc-9c16-e2a5f999da51"
                href="_images/aad_cc.png"
                title=""
                data-title=""
@@ -329,9 +335,9 @@ When using custom controls, the users are redirected to SafeNet Trusted Access t
                      width="100%"
                      height="auto"
                      alt=""/>
-                </a><p>The new Custom Control is created with a default name <strong>SafeNet MFA</strong></p>
+                </a><p id="custom-control">The new Custom Control is created with a default name <strong>SafeNet MFA</strong></p>
 <a class=""
-               data-lightbox="group-3fcf1e18-26e8-4695-9e14-dbce45a8eafb"
+               data-lightbox="group-bf9c1698-e5d3-4c87-a23e-1aff5feb31f5"
                href="_images/aad_cc_added.png"
                title=""
                data-title=""
@@ -341,22 +347,24 @@ When using custom controls, the users are redirected to SafeNet Trusted Access t
                      height="auto"
                      alt=""/>
                 </a></div>
-<div class="section" id="create-a-new-policy-to-apply-the-new-custom-control-using-these-steps">
-<h3>Create a new Policy to apply the new Custom Control using these steps:<a class="headerlink" href="#create-a-new-policy-to-apply-the-new-custom-control-using-these-steps" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="create-a-new-policy-to-apply-the-new-custom-control">
+<h3>Create a new Policy to apply the new Custom Control<a class="headerlink" href="#create-a-new-policy-to-apply-the-new-custom-control" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><ul class="simple">
+<div><ol class="arabic simple">
 <li><p>Click <span class="guilabel">Policies</span></p></li>
 <li><p>Click <span class="guilabel">+ New Policy</span></p></li>
 <li><p>Name the new policy, <em>for example Custom MFA for Cloud Applications</em></p></li>
+</ol>
+<ul class="simple">
 <li><p><strong>Assignments</strong></p>
-<ul>
+<ol class="arabic simple">
 <li><p>Under <strong>Users and Groups</strong>, click <span class="guilabel">0 users and groups selected</span> to open the user selection blade</p></li>
 <li><p>Click <span class="guilabel">All users</span> to apply the policy to all users, or <span class="guilabel">Select users and groups</span> to apply the policy to specific users and groups</p></li>
-</ul>
+</ol>
 </li>
 </ul>
 <a class=""
-               data-lightbox="group-e512b19c-322e-4bed-b9b8-27a20f7a9ebe"
+               data-lightbox="group-27bd9001-8feb-4dd8-97e8-1765b4ba5096"
                href="_images/aad_cc_users.png"
                title=""
                data-title=""
@@ -366,17 +374,17 @@ When using custom controls, the users are redirected to SafeNet Trusted Access t
                      height="auto"
                      alt=""/>
                 </a></div></blockquote>
-<ul>
+<ul id="apps">
 <li><p>Under <strong>Cloud apps or actions</strong>, click <span class="guilabel">No cloud apps or actions selected</span> to open the application selection blade</p>
 <blockquote>
-<div><ul class="simple">
+<div><ol class="arabic simple">
 <li><p>Click <span class="guilabel">All apps</span>, to apply the policy to all applications, or <span class="guilabel">Select apps</span> to apply the policy to specific applications</p></li>
-</ul>
+</ol>
 </div></blockquote>
 </li>
 </ul>
 <a class=""
-               data-lightbox="group-fd70682f-3074-47f6-a043-7fcb8f7f19ff"
+               data-lightbox="group-1bf7cac6-8f1f-485c-9896-ad108c98f918"
                href="_images/aad_cc_apps.png"
                title=""
                data-title=""
@@ -388,14 +396,14 @@ When using custom controls, the users are redirected to SafeNet Trusted Access t
                 </a><ul>
 <li><p>Under <strong>Conditions</strong>, click <span class="guilabel">0 conditions selected</span> to open the conditions blade</p>
 <blockquote>
-<div><ul class="simple">
+<div><ol class="arabic simple">
 <li><p>Select the conditions that are required for your policy</p></li>
-</ul>
+</ol>
 </div></blockquote>
 </li>
 </ul>
 <a class=""
-               data-lightbox="group-dcb48a67-06c6-44a4-b30f-762ed5ec1545"
+               data-lightbox="group-6a31bd58-514c-4475-bf1d-d9679342e9c8"
                href="_images/aad_cc_conditions.png"
                title=""
                data-title=""
@@ -407,15 +415,15 @@ When using custom controls, the users are redirected to SafeNet Trusted Access t
                 </a><ul>
 <li><p><strong>Access Controls</strong></p>
 <blockquote>
-<div><ul class="simple">
-<li><p>Under <strong>Grant</strong>, click <span class="guilabel">0 controls selected</span> to open the grant selection ConditionalAccessBlade</p></li>
+<div><ol class="arabic simple">
+<li><p>Under <strong>Grant</strong>, click <span class="guilabel">0 controls selected</span> to open the grant selection blade</p></li>
 <li><p>Make sure <strong>Grant access</strong> is selected and click <span class="guilabel">SafeNet MFA</span> to select the Custom Control created in <a class="reference internal" href="#custom-control"><span class="std std-ref">this section</span></a>, click <span class="guilabel">Select</span></p></li>
-</ul>
+</ol>
 </div></blockquote>
 </li>
 </ul>
 <a class=""
-               data-lightbox="group-2c7d47a3-2f6d-49b7-80bc-ceaadc199fe0"
+               data-lightbox="group-4aeb257f-9e98-41cf-a640-a33ebb033379"
                href="_images/aad_cc_grant.png"
                title=""
                data-title=""
@@ -427,15 +435,15 @@ When using custom controls, the users are redirected to SafeNet Trusted Access t
                 </a><ul>
 <li><p><strong>Enable Policy</strong></p>
 <blockquote>
-<div><ul class="simple">
+<div><ol class="arabic simple">
 <li><p>To save the policy in <strong>Report only mode</strong>, click <span class="guilabel">Report-only</span>, to save and enable the policy, click <span class="guilabel">On</span></p></li>
 <li><p>Click <span class="guilabel">Create</span> to save and create your policy</p></li>
-</ul>
+</ol>
 </div></blockquote>
 </li>
 </ul>
 <a class=""
-               data-lightbox="group-5ab02806-1d60-4c2c-8a45-e472c04cf488"
+               data-lightbox="group-ae4ccb5b-7d83-4ed2-8193-023b96700b9b"
                href="_images/aad_cc_create.png"
                title=""
                data-title=""
@@ -446,6 +454,72 @@ When using custom controls, the users are redirected to SafeNet Trusted Access t
                      alt=""/>
                 </a><p>The new policy is created</p>
 </div>
+</div>
+<div class="section" id="testing-the-solution">
+<h2>Testing the solution<a class="headerlink" href="#testing-the-solution" title="Permalink to this headline">¶</a></h2>
+<p>To test the integration, open a browser and navigate to the Azure application selected in <a class="reference internal" href="#apps"><span class="std std-ref">this section</span></a>, click <span class="guilabel">Sign in</span></p>
+<a class=""
+               data-lightbox="group-3e533652-2446-4918-8ae3-43d30b8dbd0b"
+               href="_images/aad_office.png"
+               title=""
+               data-title=""
+               ><img src="_images/aad_office.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><p>You are redirected to Azure Active Directory sign in page, type in your Azure Active Directory username and click <span class="guilabel">Next</span></p>
+<a class=""
+               data-lightbox="group-b900b92a-0e40-4491-a9b2-72f3d11b5329"
+               href="_images/office_user.png"
+               title=""
+               data-title=""
+               ><img src="_images/office_user.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><p>Type in your Azure Active Directory password and click <span class="guilabel">Sign in</span></p>
+<a class=""
+               data-lightbox="group-18ed5810-cab7-4abb-82ab-cd4630bc1c96"
+               href="_images/office_pass.png"
+               title=""
+               data-title=""
+               ><img src="_images/office_pass.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><p>You are redirected to SafeNet Trusted Access authentication page, type in your OTP (using any OTP authenticators assigned to your user) and click <span class="guilabel">LOGIN</span></p>
+<a class=""
+               data-lightbox="group-f0d28fab-1992-4f50-9ae9-b08080587271"
+               href="_images/sta_login.png"
+               title=""
+               data-title=""
+               ><img src="_images/sta_login.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a><p>You are redirected back to your application and logged in</p>
+<a class=""
+               data-lightbox="group-b5947a1c-d31d-4175-b504-d91adad81f78"
+               href="_images/office.png"
+               title=""
+               data-title=""
+               ><img src="_images/office.png"
+                     class=""
+                     width="100%"
+                     height="auto"
+                     alt=""/>
+                </a></div>
+<div class="section" id="solution-overview-video">
+<h2>Solution Overview Video<a class="headerlink" href="#solution-overview-video" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<p>With Custom Controls implementation, the username matching between Azure Active Directory and SafeNet Trusted Access is based on <strong>UPN</strong>.
+Currently, the only way to get the user’s UPN into SafeNet Trusted Access is through synchronization from Active Directory, using SafeNet Trusted Access Synchronization Agent. In case the user identifictaion fails after redirect to SafeNet Trusted Access, verify the <strong>UPN</strong> matches between Azure Active Dirctory and synchronized user in SafeNet Trusted Access.</p>
 </div>
 </div>
 

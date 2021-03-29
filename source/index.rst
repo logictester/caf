@@ -261,7 +261,7 @@ You are redirected back to your application and logged in
 Solution Overview Video
 =======================
 
-.. youtibe:: 5Tl06EuQrbU
+.. youtube:: 5Tl06EuQrbU
 
 
 Troubleshooting
