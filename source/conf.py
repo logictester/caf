@@ -69,3 +69,7 @@ html_logo = '_static/thales_logo.png'
 html_favicon = 'favicon.ico'
 
 blockdiag_fontpath = '_static/arial.ttf'
+
+latex_elements = {
+  'extraclassoptions': 'openany,oneside'
+}
